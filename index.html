@@ -1,46 +1,101 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.1/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.1/dist/semantic.min.js"></script>
+  </head>
+  <body class="ui container" style="margin-top: auto">
+    <div class="ui middle aligned grid">
+      <div class="three wide column"></div>
+      <div class="twelve wide column">
+        <div class="container">
+          <p style="color: lightgray">
+            <span class="ui big text"
+              >Building seamless connections between design and
+              functionality.</span
+            >
+          </p>
+          <span class="ui yellow text">Hi There, My name is</span>
+          <p>
+            <span class="ui huge text" style="color: whitesmoke"
+              >Mushthaqu Anadiyan</span
+            >
+          </p>
+          <p>
+            <span class="ui huge text" style="color: lightblue"
+              >I do development for <br />
+              <span class="ui text big teal" id="skillScroll">You</span>
+            </span>
+          </p>
+          <p style="text-align: justify; color: whitesmoke">
+            <span class="ui medium text" style="line-height: 1.5">
+              I am a software engineer specializing in digital experience, I am
+              dedicated to building accessible, human-centered products for the
+              web, desktop, and database. I understand the importance of
+              creating intuitive and efficient user interfaces that enhance the
+              overall experience. My expertise in web frontend and backend
+              development, along with my knowledge of databases, allows me to
+              seamlessly connect user experience with data-driven solutions. I
+              am always striving to stay up-to-date with the latest technologies
+              and industry trends to deliver the best possible product to my
+              clients and users. Whether it's a website, a desktop application,
+              or a database-driven system, I am committed to delivering
+              high-quality, user-friendly solutions that exceed expectations.
+            </span>
+          </p>
 
-<head>
-    <script src="scripts/jquery-3.4.1.min.js"></script>
-    <script src="scripts/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style/materialize.css">
-    <link rel="stylesheet" type="text/css" href="style/iconfont/material-icons.css">
-</head>
-
-<body class="container">
-    <header>
-        <nav class="z-depth-0">
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo black-text">Hoeny Hut</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="black-text" href="sass.html">Sass</a></li>
-                    <li><a class="black-text" href="badges.html">Components</a></li>
-                    <li><a class="black-text" href="collapsible.html">JavaScript</a></li>
-                </ul>
+          <div class="ui horizontal card inverted">
+            <div class="image">
+              <img src="Avatar.png" />
             </div>
-        </nav>
-    </header>
-    <main>
-
-        <div class="card z-depth-0">
-
-            
+            <div class="content">
+              <div class="header">Contact</div>
+              <div class="meta">
+                <span class="category">mushthaquhaq@gmail.com</span>
+              </div>
+              <div class="description">
+                <p>WhatsApp : +91 9633416207</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </main>
-    <footer class="page-footer">
-        
-    </footer>
-</body>
-
+      </div>
+      <div class="three wide column"></div>
+    </div>
+  </body>
 </html>
-<script>
-    $('.carousel.carousel-slider').carousel({
-        fullWidth: true,
-        indicators: true
-    });
-</script>
 
 <style>
-
+  body {
+    background-color: darkslategrey;
+  }
+  body > .grid {
+    height: 100%;
+  }
 </style>
+
+<script>
+  $(document).ready(() => {
+    let idx = 0;
+    let mySkillList = ["Web", "Desktop", "Database"];
+    setInterval(() => {
+      idx++;
+      let curIndex = idx % mySkillList.length;
+      $("#skillScroll").transition({
+        onComplete: () => {
+          $("#skillScroll").text(`${mySkillList[curIndex]}`);
+          $("#skillScroll").transition();
+        },
+      });
+    }, 2500);
+  });
+</script>
